@@ -6,13 +6,13 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         arch:
           - x86_64
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - run: sudo ./alpine-chroot-install -a ${{ matrix.arch }}
 
